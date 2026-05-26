@@ -11,9 +11,11 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws Exception {
 
+        // i read a file input.json and convert it to string
         String content = Files.readString(Paths.get("src/main/resources/input.json"));
         JSONObject json = new JSONObject(content);
 
+        // json file ru data utheiki date re convert
         LocalDate pricingDate = LocalDate.parse(json.getString("date"));
         JSONArray partsArray = json.getJSONArray("parts");
 

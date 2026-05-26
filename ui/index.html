@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Price Configurator</title>
+</head>
+<body>
+<h1>Cycle Price Configurator</h1>
+
+<label>Frame:</label>
+<select id="frame">
+    <option value="1200">Steel Frame</option>
+    <option value="1800">Aluminium Frame</option>
+</select>
+
+<br><br>
+
+<label>Tyre:</label>
+<select id="tyre">
+    <option value="230">Tubeless Tyre</option>
+    <option value="200">Standard Tyre</option>
+</select>
+
+<br><br>
+
+<label>Spokes:</label>
+<select id="spokes">
+    <option value="300">Standard Spokes</option>
+</select>
+
+<br><br>
+
+<label>Pricing Date:</label>
+<input type="date" id="pricingDate">
+
+<br><br>
+
+<button onclick="calculatePrice()">Calculate Price</button>
+
+<h2 id="result"></h2>
+
+<script>
+    function calculatePrice() {
+        let frame = parseInt(document.getElementById("frame").value);
+        let tyre = parseInt(document.getElementById("tyre").value);
+        let spokes = parseInt(document.getElementById("spokes").value);
+
+        let total = frame + tyre + spokes;
+
+        document.getElementById("result").innerText =
+            "Total Price: ₹" + total;
+    }
+</script>
+</body>
+</html>
